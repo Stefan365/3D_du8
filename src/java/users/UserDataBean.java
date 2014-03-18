@@ -1,18 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package users;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author Jaroslav Srp
+ * @author Jaroslav Srp / Stefan Veres
  */
 public class UserDataBean {
-	private ArrayList<UserBean> users = new ArrayList<UserBean>();
-	private int size;
+	private final ArrayList<UserBean> users = new ArrayList<UserBean>();
 	
     
 	public synchronized void addUser(UserBean user) {
@@ -22,7 +17,19 @@ public class UserDataBean {
     public synchronized int getSize() {
 		return users.size();
 	}
-
+    
+    public synchronized UserBean getLastBean() {
+		return this.users.get(this.users.size() - 1);
+	}
+    
+    public synchronized boolean isEmpty() {
+        return this.users.isEmpty();
+    }
+    
+    public synchronized boolean isLastEmpty() {
+        return this.getLastBean().isEmpty();
+	}
+        
     public synchronized ArrayList<UserBean> getUsers() {
 		return this.users;
 	}

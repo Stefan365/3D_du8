@@ -1,17 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package users;
 
 /**
  *
- * @author Jaroslav Srp
+ * @author Jaroslav Srp / Stefan Veres
  */
 public class UserBean {
 	private String name;
     private String surname;
 	private int idNum;
+    private String birthYear;
 
 	public int getIdNum() {
 		return idNum;
@@ -37,8 +34,20 @@ public class UserBean {
 		return surname;
 	}
 
+	public void setBirthYear(String year) {
+		this.birthYear  = year;
+	}
+    
+   	public String getBirthYear() {
+		return this.birthYear;
+	}
 
 	public boolean hasValidData() {
-		return this.name != null && this.surname != null;
+		return (!"".equals(this.surname) && (!"".equals(this.name)) && !"".equals(this.birthYear));
+        
+	}
+    
+    public boolean isEmpty() {
+		return (this.name == null && this.surname == null && this.birthYear == null);
 	}
 }
