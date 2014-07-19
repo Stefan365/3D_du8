@@ -2,7 +2,7 @@ package users;
 
 /**
  *
- * @author Jaroslav Srp / Stefan Veres
+ * @author Stefan Veres
  */
 public class UserBean {
 	private String name;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Jaroslav Srp / Stefan Veres
+ * @author Stefan Veres
  */
 public class UserDataBean {
 	private final ArrayList<UserBean> users = new ArrayList<UserBean>();

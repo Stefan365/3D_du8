@@ -1,7 +1,8 @@
+
 <%--
     Document   : registerUser
-    Created on : 15.12.2012, 11:25:07 / 19.03.2014
-    Author     : Jaroslav Srp / Stefan Veres
+    Created on : 19.03.2014
+    Author     : Stefan Veres
 --%>
 
 <%@page import="users.UserBean"%>
@@ -15,15 +16,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    
+
     <%
         int id;
-        
-        if (users.isEmpty()){
+
+        if (users.isEmpty()) {
             id = Pom.idGenerator();
             user.setIdNum(id);
             users.addUser(user);
-        } else if  (!users.isLastEmpty()){
+        } else if (!users.isLastEmpty()) {
             id = Pom.idGenerator();
             user.setIdNum(id);
             users.addUser(user);
@@ -31,7 +32,7 @@
     %>
 
     <body>
-        
+
         <h1>Registrace uživatele</h1>
 
         <form action="uzivatelia.jsp" method="post">

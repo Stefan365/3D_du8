@@ -1,7 +1,7 @@
 <%-- 
     Document   : uzivatelia
     Created on : 08-Mar-2014, 11:27:55
-    Author     : User
+    Author     : Veres
 --%>
 
 <%@page import="javax.swing.JOptionPane"%>
@@ -20,7 +20,7 @@
     <body>
 
         
-        <%--blok 0: <jsp:setProperty name="user2" property="*" />--%>
+        <%--<jsp:setProperty name="user" property="*" />--%>
 
         <%
             //blok 1:
@@ -30,7 +30,8 @@
 
             if (user.hasValidData()) {
 
-                //blok 2:
+                //blok 2: ochrana pred F5: zapise to vzdy do poslednej beany, 
+                //pri F5 sa to len prepise.
                 user = (UserBean) users.getLastBean();
                 user.setName(request.getParameter("name"));
                 user.setSurname(request.getParameter("surname"));
